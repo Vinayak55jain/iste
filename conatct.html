@@ -3,39 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="contac.css">
-    
 </head>
 <body>
-    <div id="contact">
+    <div id="header">
         <div class="container">
-            <p style="color: white; font-size: xx-large; margin-left: 10px;">Contact Me</p>
-            <div class="row">
-                
-                <div class="contact-left">
-                    <img src="istelogo.png" alt="error">
-                </div>
-                    <div class="contact-right">
-                        <form name="submit-to-google-sheet" >
-                            <input type="text" name="Name" placeholder="Your Name"  required>
-                            <input type="email" name="Email" placeholder="Enter Email" required>
-                            <input type="number"  name="PhoneNo" placeholder="Enter your PhoneNo" required>
-                <select required name="Year" style="color: aliceblue;"> 
-                    <option value="" disabled selected hidden style="color: aliceblue;">Select Your Year</option>
-                    <option value="1" style="color: aliceblue;">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                            <textarea name="Message" rows="3" placeholder="Your Message"></textarea>
-                            <button type="submit" class="btn">Submit</button>
-                            <span id="msg"></span>
-                        </form>  
-                    </div>
+            <div class="header-content">
+                <p id="contact-heading">Contact Me</p>
+                <img src="istelogo.png" alt="error" id="logo">
+            </div>
+        </div>
+    </div>
+
+    
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet" >
+                        <input type="text" name="Name" placeholder="Your Name"  required>
+                        <input type="email" name="Email" placeholder="Enter Email" required>
+                        <input type="number"  name="PhoneNo" placeholder="Enter your PhoneNo" required>
+                        <select required name="Year" style="color: aliceblue;"> 
+                            <option value="" disabled selected hidden style="color: aliceblue;">Select Your Year</option>
+                            <option value="1" style="color: aliceblue;">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <textarea name="Message" rows="3" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                        <span id="msg"></span>
+                    </form>  
                 </div>
             </div>
         </div>
-      </div>
+    </div>
+
+    <script>
+        // JavaScript for typing effect
+        const contactHeading = document.getElementById('contact-heading');
+        const textToType = 'Contact Us';
+
+        function typeText(index) {
+            if (index <= textToType.length) {
+                contactHeading.innerText = textToType.slice(0, index);
+                setTimeout(() => typeText(index + 1), 100); // Adjust the typing speed (in milliseconds)
+            }
+        }
+
+        // Start typing when the page loads
+        window.onload = () => {
+            typeText(0);
+        };
+    </script>
 </body>
 </html>
